@@ -1,5 +1,0 @@
-Halo pak, salam kenal nama saya Haykal dari garut
-
-Resolusi Saya :
-- Membuat website menggunakan framework javascript
-- Belum bekerja
