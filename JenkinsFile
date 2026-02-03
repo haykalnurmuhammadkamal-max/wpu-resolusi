@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Cek Repositori') {
+            steps {
+                echo 'Berhasil terhubung ke GitHub!'
+                sh 'ls -la'
+            }
+        }
+        stage('Build Sederhana') {
+            steps {
+                echo 'Sedang menjalankan proses build...'
+            }
+        }
+    }
+}
