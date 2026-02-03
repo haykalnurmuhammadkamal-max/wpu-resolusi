@@ -1,16 +1,9 @@
 pipeline {
     agent any
-
     stages {
-        stage('Cek Repositori') {
+        stage('Test') {
             steps {
-                echo 'Berhasil terhubung ke GitHub!'
-                sh 'ls -la'
-            }
-        }
-        stage('Build Sederhana') {
-            steps {
-                echo 'Sedang menjalankan proses build...'
+                echo 'Cek: Jenkins Berhasil Jalan!'
             }
         }
     }
