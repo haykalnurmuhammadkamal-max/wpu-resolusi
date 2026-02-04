@@ -1,10 +1,38 @@
 pipeline {
     agent any
+
     stages {
-        stage('Test') {
+        stage('Persiapan') {
             steps {
-                echo 'Cek: Jenkins Berhasil Jalan!'
+                echo 'Memulai proses deployment untuk wpu-resolusi...'
+                sh 'git --version'
             }
+        }
+
+        stage('Validasi File') {
+            steps {
+                echo 'Memeriksa daftar file yang ada:'
+                sh 'ls -lh'
+            }
+        }
+
+        stage('Simulasi Deploy') {
+            steps {
+                echo 'Menyalin file resolusi ke folder target...'
+                // Contoh: membuat folder deploy jika belum ada
+                sh 'mkdir -p ~/deploy_resolusi'
+                sh 'cp *.txt ~/deploy_resolusi/'
+                echo 'Deployment selesai!'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Selamat! Build dan Deploy berhasil dilakukan.'
+        }
+        failure {
+            echo 'Waduh, ada yang salah. Cek log konsol kembali.'
         }
     }
 }
