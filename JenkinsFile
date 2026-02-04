@@ -7,6 +7,7 @@ pipeline {
                 sh 'mkdir -p /home/pc-6/deploy_resolusi'
                 sh 'cp *.txt /home/pc-6/deploy_resolusi/'
                 sh 'chmod -R 777 /home/pc-6/deploy_resolusi'
+                sh 'ls -l'
             }
         }
     }
